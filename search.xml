@@ -33,24 +33,35 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Error example 2]]></title>
-    <url>%2F2018%2F09%2F25%2Ferrorexample2%2F</url>
-    <content type="text"><![CDATA[出租车计价本题要求根据某城市普通出租车收费标准编写程序进行车费计算。具体标准如下： 起步里程为3公里，起步费10元；超起步里程后10公里内，每公里2元；超过10公里以上的部分加收50%的回空补贴费，即每公里3元；营运过程中，因路阻及乘客要求临时停车的，按每5分钟2元计收（不足5分钟则不收费）。 输入格式：输入在一行中给出输入行驶里程（单位为公里，精确到小数点后1位）与等待时间（整数，单位为分钟），其间以空格分隔。 输出格式：在一行中输出乘客应支付的车费（单位为元），结果四舍五入，保留到元。 输入样例1：12.6 2 输出样例1：110 输入样例2：15.1 4 输出样例2：114 输入样例3：112.5 9 输出样例3：134 Program123456789101112131415161718192021222324252627282930313233#include &lt;stdio.h&gt;int price (float, int);int main() &#123; float m; int t; scanf("%f %d", &amp;m, &amp;t); printf("%d\n", price(m, t)); return 0;&#125;int price (float m, int t) &#123; float r = 0; if (m &lt;= 3) r = 10; else if (m &lt;= 10) r = 10+(m-3)*2; else r = 10+14+(m-10)*3; if (t &gt;= 5) r += 2*(t/5); //四舍五入：*10 %10 if if ((r*10)%10 &lt; 5) return r; else return (r+1);&#125; Error29行if (r*10%10 &lt; 5)报错：1234invalid operands to binary expression (&apos;float&apos; and &apos;float&apos;)printf(&quot;%f\n&quot;, (i*10)%10); ~~~~~~^~~1 error generated. Solution经检查%前的变量不能为float，需将%前的变量进行强制类型转换为int1234if ((int)(r*10)%10 &lt; 5) return (int)r;esle return (int)(r+1);]]></content>
+    <title><![CDATA[C Error example 2]]></title>
+    <url>%2F2018%2F09%2F25%2Fcerrorexample2%2F</url>
+    <content type="text"><![CDATA[出租车计价本题要求根据某城市普通出租车收费标准编写程序进行车费计算。具体标准如下： 起步里程为3公里，起步费10元；超起步里程后10公里内，每公里2元；超过10公里以上的部分加收50%的回空补贴费，即每公里3元；营运过程中，因路阻及乘客要求临时停车的，按每5分钟2元计收（不足5分钟则不收费）。 输入格式：输入在一行中给出输入行驶里程（单位为公里，精确到小数点后1位）与等待时间（整数，单位为分钟），其间以空格分隔。 输出格式：在一行中输出乘客应支付的车费（单位为元），结果四舍五入，保留到元。 输入样例1：12.6 2 输出样例1：110 输入样例2：15.1 4 输出样例2：114 输入样例3：112.5 9 输出样例3：134 Program123456789101112131415161718192021222324252627282930313233#include &lt;stdio.h&gt;int price (float, int);int main() &#123; float m; int t; scanf("%f %d", &amp;m, &amp;t); printf("%d\n", price(m, t)); return 0;&#125;int price (float m, int t) &#123; float r = 0; if (m &lt;= 3) r = 10; else if (m &lt;= 10) r = 10+(m-3)*2; else r = 10+14+(m-10)*3; if (t &gt;= 5) r += 2*(t/5); //四舍五入：*10 %10 if if ((r*10)%10 &lt; 5) return r; else return (r+1);&#125; Error29行if (r*10%10 &lt; 5)报错： 1234invalid operands to binary expression (&apos;float&apos; and &apos;float&apos;)printf(&quot;%f\n&quot;, (i*10)%10); ~~~~~~^~~1 error generated. Solution经检查%前的变量不能为float，需将%前的变量进行强制类型转换为int 1234if ((int)(r*10)%10 &lt; 5) return (int)r;esle return (int)(r+1);]]></content>
       <categories>
-        <category>C</category>
+        <category>C error</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Error example 3]]></title>
-    <url>%2F2018%2F09%2F25%2Ferrorexample3%2F</url>
-    <content type="text"><![CDATA[求n以内最大的k个素数以及它们的和本题要求计算并输出不超过n的最大的k个素数以及它们的和。 输入格式：输入在一行中给出n(10≤n≤10000)和k(1≤k≤10)的值。 输出格式：1素数1+素数2+…+素数k=总和值 输入样例1：11000 10 输出样例1：1997+991+983+977+971+967+953+947+941+937=9664 输入样例2：112 6 输出样例2：111+7+5+3+2=28 Program123456789101112131415161718192021222324252627282930313233343536373839404142434445464748#include &lt;stdio.h&gt;int prime (int);int main () &#123; int i; int n, k; int cnt = 0; int sum = 0; scanf("%d %d", &amp;n, &amp;k); int p[k] = &#123;0&#125;; for (i = n; i &gt; 1; i --) &#123; if (prime(i) == 1) &#123; sum += i; p[cnt] = i; cnt ++; &#125; if (cnt == k) break; &#125; for (i = 0; i &lt; cnt; i ++) &#123; printf("%d", p[i]); if (i != cnt-1) printf("+"); &#125; printf("=%d\n", sum); return 0;&#125;int prime (int n) &#123; int r = 1; int i; if (n &lt; 2) r = 0; for (i = 2; i &lt; n; i ++) &#123; if (n%i == 0) r= 0; &#125; return r;&#125; Error13行报错：1234error: variable-sized object may not be initializedint p[k] = &#123;0&#125;; ^1 error generated. Solution经检查C语言中，数组长度必须在创建数组时指定，并且只能是一个常数，不能是变量。一旦定义了一个数组，系统将为它分配一个固定大小的空间，以后不能改变，称为静态数组，故采用动态数组1234567891011// Add before line 1#include &lt;stdlib.h&gt; // Add before line 9 int *p; // Add before line 11 p = (int*)malloc(k*sizeof(int)); // Add before line 31 free(p);]]></content>
+    <title><![CDATA[C Error example 3]]></title>
+    <url>%2F2018%2F09%2F25%2Fcerrorexample3%2F</url>
+    <content type="text"><![CDATA[求n以内最大的k个素数以及它们的和本题要求计算并输出不超过n的最大的k个素数以及它们的和。 输入格式：输入在一行中给出n(10≤n≤10000)和k(1≤k≤10)的值。 输出格式：1素数1+素数2+…+素数k=总和值 输入样例1：11000 10 输出样例1：1997+991+983+977+971+967+953+947+941+937=9664 输入样例2：112 6 输出样例2：111+7+5+3+2=28 Program123456789101112131415161718192021222324252627282930313233343536373839404142434445464748#include &lt;stdio.h&gt;int prime (int);int main () &#123; int i; int n, k; int cnt = 0; int sum = 0; scanf("%d %d", &amp;n, &amp;k); int p[k] = &#123;0&#125;; for (i = n; i &gt; 1; i --) &#123; if (prime(i) == 1) &#123; sum += i; p[cnt] = i; cnt ++; &#125; if (cnt == k) break; &#125; for (i = 0; i &lt; cnt; i ++) &#123; printf("%d", p[i]); if (i != cnt-1) printf("+"); &#125; printf("=%d\n", sum); return 0;&#125;int prime (int n) &#123; int r = 1; int i; if (n &lt; 2) r = 0; for (i = 2; i &lt; n; i ++) &#123; if (n%i == 0) r= 0; &#125; return r;&#125; Error13行报错： 1234error: variable-sized object may not be initializedint p[k] = &#123;0&#125;; ^1 error generated. Solution经检查C语言中，数组长度必须在创建数组时指定，并且只能是一个常数，不能是变量。一旦定义了一个数组，系统将为它分配一个固定大小的空间，以后不能改变，称为静态数组，故采用动态数组 1234567891011// Add before line 1#include &lt;stdlib.h&gt; // Add before line 9 int *p; // Add before line 11 p = (int*)malloc(k*sizeof(int)); // Add before line 31 free(p);]]></content>
+      <categories>
+        <category>C error</category>
+      </categories>
   </entry>
   <entry>
-    <title><![CDATA[Error example 1]]></title>
-    <url>%2F2018%2F09%2F25%2Ferrorexample1%2F</url>
-    <content type="text"><![CDATA[Program1234int i = 3;if (1 &lt; i &lt; 5)printf("TRUE"); Error仍然能输出TRUE，但出现如下warning：12345warning: result of comparison of constant 5 with boolean expressionis always true [-Wtautological-constant-out-of-range-compare]if (1 &lt; i &lt; 5) ~~~~~ ^ ~1 warning generated. Solution改为1 &lt; i &amp;&amp; i &lt; 5之后warning消失]]></content>
+    <title><![CDATA[C Error example 1]]></title>
+    <url>%2F2018%2F09%2F25%2Fcerrorexample1%2F</url>
+    <content type="text"><![CDATA[Program1234int i = 3;if (1 &lt; i &lt; 5)printf("TRUE"); Error仍然能输出TRUE，但出现如下warning： 12345warning: result of comparison of constant 5 with boolean expressionis always true [-Wtautological-constant-out-of-range-compare]if (1 &lt; i &lt; 5) ~~~~~ ^ ~1 warning generated. Solution改为1 &lt; i &amp;&amp; i &lt; 5之后warning消失]]></content>
       <categories>
-        <category>C</category>
+        <category>C error</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[C Error example 4]]></title>
+    <url>%2F2018%2F09%2F25%2Fcerrorexample4%2F</url>
+    <content type="text"><![CDATA[求交错序列前N项和本题要求编写程序，计算交错序列 1-2/3+3/5-4/7+5/9-6/11+… 的前N项之和。 输入格式：输入在一行中给出一个正整数N。 输出格式：在一行中输出部分和的值，结果保留三位小数。 输入样例：15 输出样例：10.917 Program123456789101112131415161718192021222324252627#include &lt;stdio.h&gt;float fraction (int);int main () &#123;int i;int n;float sum = 0;scanf(&quot;%d&quot;, &amp;n);for (i = 0; i &lt; n; i ++) &#123;if (i%2 == 0)sum += fraction(i);elsesum -= fraction(i);&#125;printf(&quot;%.3f\n&quot;, sum);return 0;&#125;float fraction (int n) &#123;return (n+1)/((n+1)*2-1);&#125; Error得到的结果为1.000。分析：循环中sum只有i=0的结果，i=1开始所有结果为0。经检查24行中(n+1)/((n+1)*2-1)进行的是整型运算，测试代码如下： 1234567#include &lt;stdio.h&gt;int main () &#123;printf(&quot;%.3f&quot;, 2/3);return 0;&#125; 输出结果为0.000，如将 2改为2.0或将3改为3.0输出结果为正确结果0.667 Solution将24行中(n+1)/((n+1)*2-1)计算式进行强制类型转换： 1return float(n+1)/((n+1)*2-1);]]></content>
+      <categories>
+        <category>C error</category>
       </categories>
   </entry>
 </search>

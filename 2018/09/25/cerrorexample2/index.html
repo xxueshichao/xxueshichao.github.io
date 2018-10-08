@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="">
+<html class="theme-next pisces use-motion" lang="">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -83,14 +83,14 @@
 
 <meta name="description" content="The variable before `%` cannot be `float` type, must force transform to `int`.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Error example 2">
-<meta property="og:url" content="http://xxueshichao.github.io/2018/09/25/errorexample2/index.html">
+<meta property="og:title" content="C Error example 2">
+<meta property="og:url" content="http://xxueshichao.github.io/2018/09/25/cerrorexample2/index.html">
 <meta property="og:site_name" content="X">
 <meta property="og:description" content="The variable before `%` cannot be `float` type, must force transform to `int`.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-06T06:05:25.008Z">
+<meta property="og:updated_time" content="2018-10-07T14:32:48.384Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Error example 2">
+<meta name="twitter:title" content="C Error example 2">
 <meta name="twitter:description" content="The variable before `%` cannot be `float` type, must force transform to `int`.">
 
 
@@ -99,7 +99,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":"ture"},
     fancybox: true,
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://xxueshichao.github.io/2018/09/25/errorexample2/"/>
+  <link rel="canonical" href="http://xxueshichao.github.io/2018/09/25/cerrorexample2/"/>
 
 
 
 
 
-  <title>Error example 2 | X</title>
+  <title>C Error example 2 | X</title>
   
 
 
@@ -288,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xxueshichao.github.io/2018/09/25/errorexample2/">
+    <link itemprop="mainEntityOfPage" href="http://xxueshichao.github.io/2018/09/25/cerrorexample2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xue Shichao">
@@ -305,7 +305,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Error example 2</h1>
+          <h1 class="post-title" itemprop="name headline">C Error example 2</h1>
         
 
         <div class="post-meta">
@@ -340,8 +340,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C</span>
+                  <a href="/categories/C-error/" itemprop="url" rel="index">
+                    <span itemprop="name">C error</span>
                   </a>
                 </span>
 
@@ -371,7 +371,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  419
+                  420
                 </span>
               
 
@@ -423,8 +423,10 @@
 <h3 id="输入样例3："><a href="#输入样例3：" class="headerlink" title="输入样例3："></a>输入样例3：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">12.5 9</span><br></pre></td></tr></table></figure>
 <h3 id="输出样例3："><a href="#输出样例3：" class="headerlink" title="输出样例3："></a>输出样例3：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">34</span><br></pre></td></tr></table></figure>
 <h2 id="Program"><a href="#Program" class="headerlink" title="Program"></a>Program</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">price</span> <span class="params">(<span class="keyword">float</span>, <span class="keyword">int</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">float</span> m;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%f %d"</span>, &amp;m, &amp;t);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, price(m, t));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">price</span> <span class="params">(<span class="keyword">float</span> m, <span class="keyword">int</span> t)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">float</span> r = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (m &lt;= <span class="number">3</span>)</span><br><span class="line">        r = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (m &lt;= <span class="number">10</span>)</span><br><span class="line">        r = <span class="number">10</span>+(m<span class="number">-3</span>)*<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">        r = <span class="number">10</span>+<span class="number">14</span>+(m<span class="number">-10</span>)*<span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (t &gt;= <span class="number">5</span>)</span><br><span class="line">        r += <span class="number">2</span>*(t/<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//四舍五入：*10 %10 if</span></span><br><span class="line">    <span class="keyword">if</span> ((r*<span class="number">10</span>)%<span class="number">10</span> &lt; <span class="number">5</span>)</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> (r+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h2><p>29行<code>if (r*10%10 &lt; 5)</code>报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">invalid operands to binary expression (&apos;float&apos; and &apos;float&apos;)</span><br><span class="line">printf(&quot;%f\n&quot;, (i*10)%10);</span><br><span class="line">               ~~~~~~^~~</span><br><span class="line">1 error generated.</span><br></pre></td></tr></table></figure></p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>经检查<code>%</code>前的变量不能为<code>float</code>，需将<code>%</code>前的变量进行强制类型转换为<code>int</code><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ((<span class="keyword">int</span>)(r*<span class="number">10</span>)%<span class="number">10</span> &lt; <span class="number">5</span>)</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>)r;</span><br><span class="line">esle</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>)(r+<span class="number">1</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h2><p>29行<code>if (r*10%10 &lt; 5)</code>报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">invalid operands to binary expression (&apos;float&apos; and &apos;float&apos;)</span><br><span class="line">printf(&quot;%f\n&quot;, (i*10)%10);</span><br><span class="line">               ~~~~~~^~~</span><br><span class="line">1 error generated.</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>经检查<code>%</code>前的变量不能为<code>float</code>，需将<code>%</code>前的变量进行强制类型转换为<code>int</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ((<span class="keyword">int</span>)(r*<span class="number">10</span>)%<span class="number">10</span> &lt; <span class="number">5</span>)</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>)r;</span><br><span class="line">esle</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>)(r+<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -445,7 +447,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://xxueshichao.github.io/2018/09/25/errorexample2/" title="Error example 2">http://xxueshichao.github.io/2018/09/25/errorexample2/</a>
+    <a href="http://xxueshichao.github.io/2018/09/25/cerrorexample2/" title="C Error example 2">http://xxueshichao.github.io/2018/09/25/cerrorexample2/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -467,8 +469,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/25/errorexample3/" rel="next" title="Error example 3">
-                <i class="fa fa-chevron-left"></i> Error example 3
+              <a href="/2018/09/25/cerrorexample3/" rel="next" title="C Error example 3">
+                <i class="fa fa-chevron-left"></i> C Error example 3
               </a>
             
           </div>
@@ -562,7 +564,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -599,12 +601,6 @@
                     <a href="https://github.com/xxueshichao" target="_blank" title="GitHub">
                       
                         <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:xxueshichao@gmail.com" target="_blank" title="Email">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>Email</a>
                   </span>
                 
             </div>
@@ -672,8 +668,6 @@
 
 
 
-
-  <div class="footer-custom">Documentation licensed under<a href="https://creativecommons.org/licenses/by/4.0/"><strong> CC BY 4.0.</strong></a></div>
 
 
         
@@ -770,6 +764,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
